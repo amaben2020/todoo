@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Priority } from '../types';
+import { Priority } from '../../types';
 
 interface TodoFormProps {
   addTodo: (todo: { title: string; priority: Priority }) => void;

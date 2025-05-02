@@ -1,4 +1,4 @@
-import { Priority, Todo } from '../types';
+import { Priority, Todo } from '../../types';
 
 interface TodoListProps {
   todos: Todo[];

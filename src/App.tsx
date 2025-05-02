@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { StatusFilter, SortBy, Priority, Todo } from './types';
-import TodoForm from './components/TodoForm';
-import TodoList from './components/TodoList';
-import TodoStats from './components/TodoStats';
+import TodoForm from './components/todo-form/TodoForm';
+import TodoList from './components/todo-list/TodoList';
+import TodoStats from './components/todo-stats/TodoStats';
 
 export default function App() {
   const [todos, setTodos] = useState<Todo[]>(() => [
