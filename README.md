@@ -1,41 +1,46 @@
-Install dependencies
+# Todo App Setup Instructions
 
-Pull code from repo
+## Install dependencies
 
-bash
+Pull code from repo and install dependencies:
+
+```bash
 npm install
-Start development server
+```
 
-bash
+## Start development server
+
+```bash
 npm run dev
-Run tests
+```
 
-bash
+## Run tests
+
+```bash
 npm test ✅
-Component Structure
-Main Components
-App (App.tsx)
+```
 
-Root component
+## Component Structure
 
-Manages global state
+### Main Components
 
-Handles filtering/sorting logic
+#### App (App.tsx)
 
-TodoForm (components/TodoForm.tsx)
+- Root component
+- Manages global state
+- Handles filtering/sorting logic
 
-Form for adding new todos
+#### TodoForm (components/TodoForm.tsx)
 
-Includes title input and priority selector
+- Form for adding new todos
+- Includes title input and priority selector
 
-TodoList (components/TodoList.tsx)
+#### TodoList (components/TodoList.tsx)
 
-Displays list of todos
+- Displays list of todos
+- Handles completion toggle and deletion
 
-Handles completion toggle and deletion
+#### TodoStats (components/TodoStats.tsx)
 
-TodoStats (components/TodoStats.tsx)
-
-Shows statistics about todos
-
-Highlights highest priority incomplete todo
+- Shows statistics about todos
+- Highlights highest priority incomplete todo
