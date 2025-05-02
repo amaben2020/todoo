@@ -42,12 +42,12 @@ export default function TodoList({
           <span className={`flex-1 ${getPriorityColor(todo.priority)}`}>
             {todo.title}
           </span>
-          <span className="text-sm text-gray-500 mx-3">
+          <span className="mx-3 text-sm text-gray-500">
             {new Date(todo.createdAt).toLocaleDateString()}
           </span>
           <button
             onClick={() => deleteTodo(todo.id)}
-            className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+            className="px-3 py-1 text-white transition-colors bg-red-500 rounded hover:bg-red-600 bg-red"
           >
             Delete
           </button>

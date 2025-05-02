@@ -20,14 +20,14 @@ export default function TodoForm({ addTodo }: TodoFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex gap-2 mb-6 flex-col sm:flex-row"
+      className="flex flex-col gap-2 mb-6 sm:flex-row"
     >
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Add a new todo..."
-        className="flex-1 px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="flex-1 px-4 py-4 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <select
         value={priority}
@@ -40,7 +40,7 @@ export default function TodoForm({ addTodo }: TodoFormProps) {
       </select>
       <button
         type="submit"
-        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+        className="px-4 py-2 text-white transition-colors bg-blue-600 rounded hover:bg-blue-700"
       >
         Add Todo
       </button>

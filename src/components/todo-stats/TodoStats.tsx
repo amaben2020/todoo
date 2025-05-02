@@ -40,8 +40,13 @@ export default function TodoStats({ todos }: TodoStatsProps) {
     }
   };
 
+  const style = {
+    display: 'flex',
+    gap: 12,
+  };
+
   return (
-    <div className="flex flex-wrap gap-4 mb-6">
+    <div className="flex flex-wrap gap-4 mb-6" style={style}>
       <div className="px-4 py-2 bg-gray-100 rounded">Total: {total}</div>
       <div className="px-4 py-2 bg-blue-100 rounded">Active: {active}</div>
       <div className="px-4 py-2 bg-green-100 rounded">

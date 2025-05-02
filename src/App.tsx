@@ -73,50 +73,52 @@ export default function App() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-3xl">
-      <h1 className="text-3xl font-bold text-center mb-8">Todo App</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 mx-auto shadow-lg max-w-8/12 rounded-[12px]">
+      <div className="w-full max-w-3xl p-6 border rounded-lg shadow-md">
+        <h1 className="mb-8 text-3xl font-bold text-center">Todo App</h1>
 
-      <div className="flex flex-wrap gap-3 mb-6">
-        <select
-          value={filter}
-          onChange={(e) => setFilter(e.target.value as StatusFilter)}
-          className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          <option value="all">All</option>
-          <option value="active">Active</option>
-          <option value="completed">Completed</option>
-        </select>
+        <div className="flex flex-wrap justify-center gap-3 mb-6">
+          <select
+            value={filter}
+            onChange={(e) => setFilter(e.target.value as StatusFilter)}
+            className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="all">All</option>
+            <option value="active">Active</option>
+            <option value="completed">Completed</option>
+          </select>
 
-        <select
-          value={priorityFilter}
-          onChange={(e) =>
-            setPriorityFilter(e.target.value as Priority | 'all')
-          }
-          className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          <option value="all">All Priorities</option>
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
-        </select>
+          <select
+            value={priorityFilter}
+            onChange={(e) =>
+              setPriorityFilter(e.target.value as Priority | 'all')
+            }
+            className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="all">All Priorities</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
 
-        <select
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value as SortBy)}
-          className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          <option value="createdAt">Sort by Date</option>
-          <option value="priority">Sort by Priority</option>
-        </select>
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value as SortBy)}
+            className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="createdAt">Sort by Date</option>
+            <option value="priority">Sort by Priority</option>
+          </select>
+        </div>
+
+        <TodoStats todos={todos} />
+        <TodoForm addTodo={addTodo} />
+        <TodoList
+          todos={getFilteredTodos()}
+          toggleTodo={toggleTodo}
+          deleteTodo={deleteTodo}
+        />
       </div>
-
-      <TodoStats todos={todos} />
-      <TodoForm addTodo={addTodo} />
-      <TodoList
-        todos={getFilteredTodos()}
-        toggleTodo={toggleTodo}
-        deleteTodo={deleteTodo}
-      />
     </div>
   );
 }
